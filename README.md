@@ -1,2 +1,8 @@
 # Blue-Team-Competition-Resources
-Resources to practice with and use during Blue Team competitions
+
+This repository is a collection of scripts and playbooks for CCDC or other Competitions such as the internal Red v. Blue that PSU CCSO hosts. 
+
+Linux Playbook <- LINK THIS HERE
+
+Windows Server Playbook <- LINK THIS HERE
+
