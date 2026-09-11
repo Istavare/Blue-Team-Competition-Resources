@@ -1,35 +1,21 @@
-# Linux Playbook
+# Basic Linux Playbook
 #### <font color="bf334a">Get scripts</font>
 
-Make sure Git is installed
-
-Check with
-`git -v`
+Make sure Git is installed with `git -v`
 
 If on Debian based Linux distribution (debian/ubuntu) 
 `sudo apt install git`
 If on RHEL based Linux distribution (RHEL/Fedora)
 `sudo dnf install git`
+Other distributions have their own package managers (pacman, emerge...)
 
+get the scripts `git clone https://github.com/Istavare/Blue-Team-Competition-Resources.git -b Linux`
+go into the directory `cd Blue-Team-Competition-Resources/linux` 
+make files in the directory executable `sudo chmod +x *.sh`
 
-get the scripts `git clone https://github.com/Istavare/Blue-Team-Competition-Resources -b Linux`
-
-make files in the script directory executable `sudo chmod +x *.sh`
-
-
-##### OLD METHOD
-
-- get scripts `wget https://raw.githubusercontent.com/CyberLions/CCDC/refs/heads/master/linux/GetScripts.sh`
-- run `./GetScripts.sh`
-- make files executable `sudo chmod +x *.sh`
-##### Or alternatively 
-- Get Git `dnf install git`
-- Download the CCDC scripts `git clone https://github.com/CyberLions/CCDC.git`
-- go into directory `cd CCDC/linux` 
-- make files executable `sudo chmod +x *.sh`
 #### <font color="c98a38">Change Passwords</font>
 
-- Edit the password file `Change_Pass.sh` after getting accounts from Aiden
+- Edit the password file `Change_Pass.sh` after getting accounts
 
 - Make a backup of the shadow file `sudo cp /etc/shadow /etc/shadow-backup` 
 - Run `Change_Pass.sh`
