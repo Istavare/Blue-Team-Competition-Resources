@@ -3,11 +3,8 @@
 
 Make sure Git is installed with `git -v`
 
-If on Debian based Linux distribution (debian/ubuntu) 
+On Debian based Linux distribution (debian/ubuntu) install with: 
 `sudo apt install git`
-If on RHEL based Linux distribution (RHEL/Fedora)
-`sudo dnf install git`
-Other distributions have their own package managers (pacman, emerge...)
 
 get the scripts `git clone https://github.com/Istavare/Blue-Team-Competition-Resources.git -b Linux`
 go into the directory `cd Blue-Team-Competition-Resources/linux` 
