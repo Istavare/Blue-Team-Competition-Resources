@@ -1,64 +1,43 @@
 # Basic Linux Playbook
-#### <font color="bf334a">Get scripts</font>
+### Preface
 
-Make sure Git is installed with `git -v`
+Whenever you find something malicous, stop it, but preferably document what it is. These are useful for incident response which makes up a decent chunk of score. Also if parts of this guide don't work, there may be some malicious service or method stopping it. These are not all encompassing but still a good starting point. If commands are not working, I recommend looking up aliases.
 
-On Debian based Linux distribution (debian/ubuntu) install with: 
-`sudo apt install git`
+Also use Google and AI to help figure everything out, they are super useful tools!
+
+### Get scripts
+
+On Debian based Linux distribution (debian/ubuntu) install with `sudo apt install git`
 
 get the scripts `git clone https://github.com/Istavare/Blue-Team-Competition-Resources.git -b Linux`
 go into the directory `cd Blue-Team-Competition-Resources/linux` 
 make files in the directory executable `sudo chmod +x *.sh`
 
-#### <font color="c98a38">Change Passwords</font>
+### Change Passwords
 
-- Edit the password file `Change_Pass.sh` after getting accounts
+- Edit the password file `change_passwords.sh` after getting accounts
+- Run `sudo ./change_passwords.sh`
 
-- Make a backup of the shadow file `sudo cp /etc/shadow /etc/shadow-backup` 
-- Run `Change_Pass.sh`
-- Use Password `AffinityCompetence62`
-#### <font color="e0db47">Setup Firewall</font>
+### Update System
 
-- Get nmap to figure it out `dnf install nmap`
-- run nmap to find SMTP IMAP and POP3 `nmap -p- localhost`
-- use the ccdc script `Stateful_IPtables.sh` this will ask for specific ports we want open
-- the ports will be on the score check but the expected ports are: 22 25 143 110 587 5355 9090
-- current rules can be checked with `sudo iptables -L` 
-#### <font color="4ead2b">Update System</font>
+- run `sudo apt update && sudo apt upgrade` this should take a while 
 
-- run `dnf upgrade` and this should take a while
-#### <font color="2b6ec6">Threat Hunting</font>
+### Setup Firewall
 
-- run ld_preload script `Check_LD_Preload.sh`
-- check for executables in weird locations with script `SusExecutable.sh`
+- check which ports are in use with 'sudo ss -tulpn'
+- make a note somewhere of what ports you want to remain open
+- install UFW with the command `sudo apt install ufw` 
+- run the scipt using `sudo ./setup_firewall.sh` this will ask for ports you want open
+
+### Threat Hunting
+
+- run ld_preload script `sudo ./check_ld_preload.sh`
+- check for executables in weird locations with `sudo ./suspicious_executables.sh`
 - check crontab with `sudo cat /var/spool/cron/*` 
 - crontab of individual users can be checked with `crontab -l`
 - systemd services are in `/etc/systemd/system/` 
 - check everything manually installed with `apt-mark showmanual` look for anything suspicious 
-#### <font color="8e5da3">Injects</font>
 
-- get inventory for inject `get-inventory.sh`
-- anything else required 
+### Injects
 
-**Credentials**
-
-scoreboard and netlab creds:
-	team05f:y5cfNksD7f
-
-![[Pasted image 20260114202938.png]]
-
-system creds:
-	sysadmin:changeme
-
-	SMTP - 25
-	IMAP - 143
-	POP3 - 110
-
-POP3 - Dovecot 
-requires auth but been down for a while
-
-21 monitors for 8 people lmaooooo
-
-
-The scenario could have been mitigated if the system was more locked down. Keeping consistent updates and having a firewall could have prevented these unauthorized access of the data and integrity of the system. 
-
+- get inventory of the system useful for injects with `sudo ./get_inventory.sh`
