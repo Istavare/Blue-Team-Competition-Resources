@@ -38,7 +38,8 @@ Make files in the directory executable: `sudo chmod +x *.sh`
 - Install UFW with the command `sudo apt install ufw`.
 - Run the script using `sudo ./setup_firewall.sh`; this will ask for ports you want open.
 - After applying rules, test every required service from the appropriate machine before moving on.
-- If running into network issues afterwards, you can disable the firewall temporarially to see if it's causing issues with other scripts. This firewall script is pretty extreme. 
+- If running into network issues afterwards, you can disable the firewall temporarially with `sudo ufw disable` to see if it's causing issues with other scripts. This firewall script is pretty extreme. 
+- Make sure to re-enable it later with `sudo ufw enable`
 
 ### Threat Hunting
 
@@ -53,6 +54,15 @@ Make files in the directory executable: `sudo chmod +x *.sh`
 
 - Get an inventory of the system useful for injects with `sudo ./get_inventory.sh`.
 - Keep incident-response notes and screenshots in the shared team location. Include affected host, service, time, evidence, actions taken, and the result.
+
+### Misc othing things for threat hunting
+
+`/etc/passwd`
+`/etc/sudoers.d/`
+`/etc/group/`
+`~/.ssh/authorized_keys/`
+`systemctl list-timers --all`
+`/etc/rc.local/`
 
 ### Everything else
 
