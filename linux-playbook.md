@@ -22,8 +22,8 @@ Make files in the directory executable: `sudo chmod +x *.sh`
 
 ### Change Passwords
 
-- Edit the password file `change_passwords.sh` after confirming the authorized accounts.
-- Run `sudo ./change_passwords.sh`
+- Edit the password file `change_passwords_rvb.sh` after confirming the authorized accounts.
+- Run `sudo ./change_passwords_rvb.sh`
 - Record which authorized accounts have had their passwords changed.
 - If required, change the service passwords in the ScoringEngine.
 

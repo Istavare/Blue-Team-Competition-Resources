@@ -29,6 +29,14 @@ prompt_password
 declare -A USERS=(
     [root]="$ADMIN_PASSWORD"
     [sysadmin]="$ADMIN_PASSWORD"
+    [MissionDirector]="$ADMIN_PASSWORD"
+    [CapeCom]="$ADMIN_PASSWORD"
+    [FlightDirector]="$ADMIN_PASSWORD"
+    [ArtemisLead]="$ADMIN_PASSWORD"
+    [GuidanceOfficer]="$ADMIN_PASSWORD"
+    [RetroOfficer]="$ADMIN_PASSWORD"
+    [FIDOControl]="$ADMIN_PASSWORD"
+    [EECOMCtrl]="$ADMIN_PASSWORD"
 )
 
 # Users that should NEVER be modified or disabled
