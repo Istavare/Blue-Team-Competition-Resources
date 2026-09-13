@@ -8,4 +8,4 @@ This repository is a collection of scripts, playbooks, and templates for CCDC or
 
 [OPNsense Playbook](opnsense-playbook.md)
 
-Notice: For transparency, AI was used in going over / compile of this infromation, but I have gone over and written portions of it. The scripts are also mostly taken from PSU CyberLions CCDC scripts.
+Notice: AI was used in going over / compiling of this information, but I have gone over and written portions of it. AI generated portions are marked as such. The scripts are also mostly taken from PSU CyberLions CCDC scripts.
