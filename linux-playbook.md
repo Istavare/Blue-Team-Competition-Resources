@@ -18,7 +18,7 @@ Also use Google and AI to help figure everything out, they are super useful tool
 
 On a Debian-based Linux distribution (Debian/Ubuntu), install with `sudo apt install git`
 
-Get the scripts: `git clone https://github.com/Istavare/Blue-Team-Competition-Resources.git -b linux`
+Get the scripts: `git clone https://github.com/Istavare/Blue-Team-Competition-Resources.git`
 Go into the directory: `cd Blue-Team-Competition-Resources/linux`
 Make files in the directory executable: `sudo chmod +x *.sh`
 

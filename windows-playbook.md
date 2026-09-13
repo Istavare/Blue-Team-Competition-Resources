@@ -14,7 +14,7 @@ While the scripts are from CCDC last year, the playbook is AI generated and I wo
 
 With Git installed, open **64-bit Windows PowerShell as Administrator** and run:
 
-1. `git clone https://github.com/Istavare/Blue-Team-Competition-Resources.git -b windows`
+1. `git clone https://github.com/Istavare/Blue-Team-Competition-Resources.git`
 2. `cd Blue-Team-Competition-Resources`
 3. `cd windows`
 
