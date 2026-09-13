@@ -1,6 +1,8 @@
 # Basic Linux Playbook
 ### Preface
 
+This playbook is mostly made by me, Istavare / Daniel. AI has gone over it but it is mostly based off of my personal CCDC playbook notes I took last year.
+
 Whenever you find something malicious, stop it, but preferably document what it is. These are useful for incident response, which makes up a decent chunk of the score. Also, if parts of this guide don't work, there may be some malicious service or method stopping it. These are not all-encompassing but are still a good starting point. If commands are not working, I recommend looking up aliases.
 
 Also use Google and AI to help figure everything out, they are super useful tools!
