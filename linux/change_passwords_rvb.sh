@@ -52,8 +52,7 @@ declare -A PROTECTED_USERS=(
 for USER in "${!USERS[@]}"; do
     if id "$USER" >/dev/null 2>&1; then
         echo "Changing password for user: $USER"
-        echo -e "${USERS[$USER]}\n${USERS[$USER]}" | passwd "$USER" >/dev/null 2>&1 || true
-        if [ $? -eq 0 ]; then
+        if printf '%s\n%s\n' "${USERS[$USER]}" "${USERS[$USER]}" | passwd "$USER" >/dev/null 2>&1; then
             echo "Password successfully changed for $USER."
         else
             echo "Failed to change password for $USER."
@@ -73,8 +72,7 @@ while IFS=: read -r username _ uid _; do
         && [[ -z "${PROTECTED_USERS[$username]}" ]]; then
 
         echo "Disabling login for user: $username"
-        usermod -s /usr/sbin/nologin "$username" >/dev/null 2>&1 || true
-        if [ $? -eq 0 ]; then
+        if usermod -s /usr/sbin/nologin "$username" >/dev/null 2>&1; then
             echo "Login disabled for $username."
         else
             echo "Failed to disable login for $username."

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Setup Directory
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 OUT_DIR="./inventory"
 mkdir -p "$OUT_DIR"
 
@@ -117,12 +118,12 @@ done
 
 # Check LD-Preload
 echo "[*] Enumerating LD-Preload"
-source ./Check_LD_Preload.sh
+source "$SCRIPT_DIR/check_ld_preload.sh"
 cp /tmp/ld_preload_log.txt "$OUT_DIR/ld_preload_log.txt"
 
 # Executable in Sus location
 echo "[*] Enumerate Sus Executables"
-sudo ./SusExecutable.sh > "$OUT_DIR/Sus_Executables.txt"
+sudo bash "$SCRIPT_DIR/suspicious_executables.sh" > "$OUT_DIR/Sus_Executables.txt"
 
 # SSHKEYS
 echo "[*] Enumerating SSH authorized keys..."
